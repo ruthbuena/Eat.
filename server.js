@@ -12,8 +12,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(express.static(path.join(__dirname, '/css')));
+
 
 app.get("/", function(req, res) {
+
 	console.log(path.join(__dirname, "/SiteFiles/booking.html"));
   res.sendFile(path.join(__dirname, "/SiteFiles/booking.html"));
 
@@ -21,6 +24,7 @@ app.get("/", function(req, res) {
 
 app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "/SiteFiles/tables.html"));
+
 });
 
 //API get/post code
@@ -31,11 +35,11 @@ app.get("/api/tables", function(req, res) {
 app.get("/api/waitList", function(req, res) {
     res.json(waitinglistData);
 });
-  
+
 // Create a new reservation - takes in JSON input
 app.post("/api/tables", function(req, res) {
 	var newReservation = req.body;
-   
+
     if (tableArray.length < 5) {
 		tableData.push(newReservation);
 		res.json(newReservation);
