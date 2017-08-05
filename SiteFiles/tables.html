@@ -43,7 +43,7 @@
 	  <script type="text/javascript">
 		$(document).ready(function() {
 			// searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-			$.get("/api/tableArray" , function(data) {
+			$.get("/api/tables" , function(data) {
 				console.log(data);
 				for(i = 0; i < data.length; i++) {
 					$(".name").append(data[i].name);

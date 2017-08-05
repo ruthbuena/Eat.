@@ -14,11 +14,13 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+	console.log(path.join(__dirname, "/SiteFiles/booking.html"));
+  res.sendFile(path.join(__dirname, "/SiteFiles/booking.html"));
+
 });
 
 app.get("/tables", function(req, res) {
-  res.sendFile(path.join(__dirname, "tables.html"));
+  res.sendFile(path.join(__dirname, "/SiteFiles/tables.html"));
 });
 
 //API get/post code
