@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.jumbotron {
+	background-image: url(../images/jumbo.jpg);
+}
+body {
+	background-color: #E6E6E6;
+}
