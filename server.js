@@ -27,7 +27,7 @@ app.get("/api/tables", function(req, res) {
 });
 
 app.get("/api/waitList", function(req, res) {
-    res.json(waitListData);
+    res.json(waitingList);
 });
   
 // Create a new reservation - takes in JSON input
