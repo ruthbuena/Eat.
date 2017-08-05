@@ -2,10 +2,9 @@
 var tableArray = [
   {
     name: "John Doe",
-    phoneNumber: "000-000-0000"
+    phoneNumber: "000-000-0000",
     email: "johndoe@example.com",
-    uniqueID: "johnDoe",
-
+    uniqueID: "johnDoe"
   }
 ];
 

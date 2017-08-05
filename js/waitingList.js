@@ -2,10 +2,9 @@
 var waitingList = [
   {
     name: "Jane Doe",
-    phoneNumber: "000-000-0000"
+    phoneNumber: "000-000-0000",
     email: "janedoe@example.com",
-    uniqueID: "janeDoe",
-
+    uniqueID: "janeDoe"
   }
 ];
 
