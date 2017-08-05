@@ -2,7 +2,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-var tableData = require("./js/tables.js");
+var tablesData = require("./js/tables.js");
 var waitlistData = require("./js/waitingList.js");
 
 var app = express();
@@ -23,7 +23,7 @@ app.get("/tables", function(req, res) {
 
 //API get/post code
 app.get("/api/tables", function(req, res) {
-    res.json(tableData);
+    res.json(tablesData);
 });
 
 app.get("/api/waitList", function(req, res) {
@@ -35,7 +35,7 @@ app.post("/api/tables", function(req, res) {
 	var newReservation = req.body;
    
     if (tableArray.length < 5) {
-		tableData.push(newReservation);
+		tablesData.push(newReservation);
 		res.json(newReservation);
     } else {
 		waitinglistData.push(newReservation);

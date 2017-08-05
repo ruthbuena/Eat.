@@ -63,10 +63,10 @@
 				uniqueID: $("#uniqueID").val().trim()
 			};
 			console.log(newUser);
-			$.post("/api/new", newUser)
+			$.post("/api/tables", newUser)
 			.done(function(data) {
 				console.log(data);
-				alert("Adding character...");
+				alert("Adding Reservation...");
 			});
 		});
 	</script>
