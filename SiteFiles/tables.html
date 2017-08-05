@@ -24,8 +24,8 @@
 						<h1 class="text-center">EAT.</h1>
 						<p class="text-center">WE ARE BETTER THEN OPENTABLE</p>
 						<p>&nbsp;</p>
-						<p class="text-center"><a class="btn btn-primary btn-lg" href="/index.html" role="button">Home</a> </p>
-						<p class="text-center"><a class="btn btn-primary btn-lg" href="/booking.html" role="button">VIEW TABLES</a> </p>
+						<p class="text-center"><a class="btn btn-primary btn-lg" href="index.html" role="button">Home</a> </p>
+						<p class="text-center"><a class="btn btn-primary btn-lg" href="booking.html" role="button">VIEW TABLES</a> </p>
 					</div>
 				</div>
 			</div>
@@ -52,13 +52,13 @@
 	  <script type="text/javascript">
 		$(document).ready(function() {
 			// searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-			$.get("/api/tableArray" , function(data) {
+			$.get("https://murmuring-earth-22924.herokuapp.com/api/tableArray" , function(data) {
 				console.log(data);
 				for(i = 0; i < data.length; i++) {
 					$(".name").append(data[i].name);
 				};
 			});
-			$.get("/api/waitingList" , function(data) {
+			$.get("https://murmuring-earth-22924.herokuapp.com/api/waitingList" , function(data) {
 				console.log(data);
 				for(i = 0; i < data.length; i++) {
 					$(".waitingList").append(data[i].name);
