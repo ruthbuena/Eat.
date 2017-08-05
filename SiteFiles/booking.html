@@ -61,11 +61,11 @@
                 <span class="help-block" style="display: none;">Please enter a valid e-mail address.</span></div>
 				<div class="form-group">
 				  <label for="email2">Number</label>
-				  <input name="Phone" type="email" class="form-control" id="email" placeholder="Phone Number">
+				  <input name="Phone" type="email" class="form-control" id="phoneNumber" placeholder="Phone Number">
               <span class="help-block" style="display: none;">Please enter a valid e-mail address.</span></div>
               <div class="form-group">
                 <label for="email4">Unique ID</label>
-                <input name="Phone" type="email" class="form-control" id="email" placeholder="Unique ID">
+                <input name="Phone" type="email" class="form-control" id="uniqueID" placeholder="Unique ID">
               <span class="help-block" style="display: none;">Please enter a valid e-mail address.</span></div>
               <button type="submit" class="btn btn-primary btn-lg" id="feedbackSubmit" style=" margin-top: 10px;"> Send</button>
             </form>
@@ -90,6 +90,22 @@
 <script src="/js/jquery-1.11.3.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="/css/bootstrap.css"></script>
-
+<script type="text/javascript">
+		$(".add-user").on("click", function(event) {
+			event.preventDefault();
+			var newUser = {
+				name: $("#name").val().trim(),
+				phoneNumber: $("#phoneNumber").val().trim(),
+				email: $("#email").val().trim(),
+				uniqueID: $("#uniqueID").val().trim()
+			};
+			console.log(newUser);
+			$.post("/api/new", newUser)
+			.done(function(data) {
+				console.log(data);
+				alert("Adding character...");
+			});
+		});
+	</script>
 
 </body></html>
