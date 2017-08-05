@@ -14,11 +14,11 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "SiteFiles/index.html"));
 });
 
 app.get("/tables", function(req, res) {
-  res.sendFile(path.join(__dirname, "tables.html"));
+  res.sendFile(path.join(__dirname, "SiteFiles/tables.html"));
 });
 
 //API get/post code
@@ -29,11 +29,11 @@ app.get("/api/tables", function(req, res) {
 app.get("/api/waitList", function(req, res) {
     res.json(waitinglistData);
 });
-  
+
 // Create a new reservation - takes in JSON input
 app.post("/api/tables", function(req, res) {
 	var newReservation = req.body;
-   
+
     if (tableArray.length < 5) {
 		tableData.push(newReservation);
 		res.json(newReservation);
