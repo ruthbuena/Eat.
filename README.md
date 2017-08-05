@@ -1,7 +1,7 @@
 # Eat.
 
 
-The enclosed repo includes an application that allows users to make restaurant reservations using Node and Express with jQuery.  Users will be allowed to make reservations based on availability (the restaurant has just 5 tables available).  The first five requests will get a reservation, every other request after that is sent to the waiting list (the following site was used as an example: https://hot-restaurant.herokuapp.com/).
+The enclosed repo includes an application that allows users to make restaurant reservations using Node and Express with jQuery. The finalized application will be deployed using Heroku.  Users will be allowed to make reservations based on availability (the restaurant has just 5 tables available).  The first five requests will get a reservation, every other request after that is sent to the waiting list (the following site was used as an example: https://hot-restaurant.herokuapp.com/).
 
 ![Hot Restaurant Image](https://raw.githubusercontent.com/afhaque/HotRestaurant/master/images-readme/HotRestaurant.png)
 
