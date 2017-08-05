@@ -2,8 +2,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-var tableData = require("/js/tables.js");
-var waitListData = require("/js/waitingList.js");
+var tableData = require("./js/tables.js");
+var waitlistData = require("./js/waitingList.js");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -23,11 +23,11 @@ app.get("/tables", function(req, res) {
 
 //API get/post code
 app.get("/api/tables", function(req, res) {
-    res.json(tableArray);
+    res.json(tableData);
 });
 
 app.get("/api/waitList", function(req, res) {
-    res.json(waitingList);
+    res.json(waitinglistData);
 });
   
 // Create a new reservation - takes in JSON input
@@ -35,10 +35,10 @@ app.post("/api/tables", function(req, res) {
 	var newReservation = req.body;
    
     if (tableArray.length < 5) {
-		tableArray.push(newReservation);
+		tableData.push(newReservation);
 		res.json(newReservation);
     } else {
-		waitingList.push(newReservation);
+		waitinglistData.push(newReservation);
 		res.json(newReservation);
     }
 });
