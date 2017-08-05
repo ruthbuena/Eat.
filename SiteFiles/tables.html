@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
 	<title>Eat.</title>
@@ -25,49 +24,37 @@
 	</header>
 	<div class="row">
 		<div class="container col-lg-12">
-			<div class="panel panel-default">
+			<div class="panel panel-default reservations">
 				<div class="panel-heading">
-					<p class="panel-title">Table Reservation</p>
+					<p class="panel-title">Current Reservation</p>
 				</div>
-				<div class="panel-body">
-					<form>
-						<div class="form-group">
-							<label for="name">Name</label>
-							<input type="text" class="form-control" id="name">
-						</div>
-						<div class="form-group">
-							<label for="phoneNumber">Phone Number</label>
-							<input type="text" class="form-control" id="phoneNumber">
-						</div>
-						<div class="form-group">
-							<label for="email">Email address</label>
-							<input type="email" class="form-control" id="email">
-						</div>
-						<div class="form-group">
-							<label for="username">Unique ID</label>
-							<input type="text" class="form-control" id="uniqueID">
-						</div>
-						<button type="submit" class="add-user btn btn-default">Submit</button>
-					</form>
+				<div class="name panel-body">
+				</div>
+			</div>
+			<div class="panel panel-default waitlist">
+				<div class="panel-heading">
+					<p class="panel-title">Wait List</p>
+				</div>
+				<div class="waitingList panel-body">
 				</div>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		$(".add-user").on("click", function(event) {
-			event.preventDefault();
-			var newUser = {
-				name: $("#name").val().trim(),
-				phoneNumber: $("#phoneNumber").val().trim(),
-				email: $("#email").val().trim(),
-				uniqueID: $("#uniqueID").val().trim()
-			};
-			console.log(newUser);
-			$.post("/api/new", newUser)
-			.done(function(data) {
+	  <script type="text/javascript">
+		$(document).ready(function() {
+			// searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+			$.get("/api/tableArray" , function(data) {
 				console.log(data);
-				alert("Adding character...");
+				for(i = 0; i < data.length; i++) {
+					$(".name").append(data[i].name);
+				};
 			});
+			$.get("/api/waitingList" , function(data) {
+				console.log(data);
+				for(i = 0; i < data.length; i++) {
+					$(".waitingList").append(data[i].name);
+				};
+			});			
 		});
 	</script>
 </body>
